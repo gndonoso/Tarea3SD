@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="/Busqueda" method="post">
+  <label for="palabra">Palabra a buscar:</label>
+  <input type="text" id="palabra" name="palabra">
+  <input type="submit" value="Buscar">
+</form> 
+<h2>Resultados</h2>
+{% for pagina in paginas %}
+<div style="background-color:rgb(158, 158, 158);border-color: black;margin-left: 8%;margin-right: 20%;">
+<p>
+   <a style="color:blue;font-size:120%;" href="{{ pagina[2] }}">{{ pagina[3] }} - Wikipedia</a>
+   <p style="font-size:80%;">(Su busqueda coincide {{ pagina[1] }} veces en la página) {{ pagina[2] }}</p>
+    </p>
+</div>
+{% endfor %}
